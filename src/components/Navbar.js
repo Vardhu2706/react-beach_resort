@@ -29,7 +29,7 @@ class Navbar extends Component {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={logo} alt="Beach Resort" />
+              <img src={logo} alt="Beach Resort" onClick={this.handleToggle} />
             </Link>
             <button type="button" className="nav-btn">
               <MdMenu className="nav-icon" onClick={this.handleToggle} />
@@ -39,10 +39,10 @@ class Navbar extends Component {
           <ul
             className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
           >
-            <li>
+            <li onClick={this.handleToggle}>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li onClick={this.handleToggle}>
               <Link to="/rooms">Rooms</Link>
             </li>
           </ul>

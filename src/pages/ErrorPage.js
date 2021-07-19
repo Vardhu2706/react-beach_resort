@@ -1,11 +1,12 @@
 // Importing Helpers
 import React from "react";
 
-// Importing Styles
+// Importing Components
+import Hero from "../components/Hero";
 
 // Functional Components
 const ErrorPage = () => {
-  return <div>Error Page</div>;
+  return <Hero />;
 };
 
 // Default Export

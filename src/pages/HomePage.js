@@ -1,11 +1,14 @@
 // Importing Helpers
 import React from "react";
 
-// Importing Styles
+// Importing Components
+import Hero from "../components/Hero.js";
 
 // Functional Component
 const Home = () => {
-  return <div>Home Page</div>;
+  return (
+    <Hero hero="defaultHero"></Hero>
+  );
 };
 
 // Default Export

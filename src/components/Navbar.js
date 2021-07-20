@@ -29,7 +29,7 @@ class Navbar extends Component {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={logo} alt="Beach Resort" onClick={this.handleToggle} />
+              <img src={logo} alt="Beach Resort" />
             </Link>
             <button type="button" className="nav-btn">
               <MdMenu className="nav-icon" onClick={this.handleToggle} />

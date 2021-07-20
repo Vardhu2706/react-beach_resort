@@ -10,12 +10,12 @@ import img5 from "./images/room-5.jpeg";
 import img6 from "./images/room-6.jpeg";
 import img7 from "./images/room-7.jpeg";
 import img8 from "./images/room-8.jpeg";
-import img9 from "./images/room-9.jpeg";
+// import img9 from "./images/room-9.jpeg";
 import img10 from "./images/room-10.jpeg";
 import img11 from "./images/room-11.jpeg";
 import img12 from "./images/room-12.jpeg";
 
-export default [
+const data = [
   {
     sys: {
       id: "1",
@@ -501,7 +501,7 @@ export default [
         {
           fields: {
             file: {
-              url: img9,
+              url: img8,
             },
           },
         },
@@ -758,3 +758,5 @@ export default [
     },
   },
 ];
+
+export default data;

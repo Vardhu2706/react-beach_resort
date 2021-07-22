@@ -21,7 +21,7 @@ class FeaturedRooms extends Component {
       <section className="featured-rooms">
         <Title title="Featured Rooms" />
         <div className="featured-rooms-center">
-          {loading ? <Loading /> : rooms}
+          {loading ? <Loading title={"Best Offers Coming Up..."} /> : rooms}
         </div>
       </section>
     );

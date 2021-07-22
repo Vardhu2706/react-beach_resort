@@ -56,6 +56,7 @@ class SingleRoomPage extends Component {
 
     return (
       <>
+        {/* Banner */}
         <StyledHero img={images[0] || this.state.defaultBcg}>
           <Banner title={`${name} room`} subtitle="">
             <Link to="/rooms" className="btn-primary">
@@ -63,6 +64,8 @@ class SingleRoomPage extends Component {
             </Link>
           </Banner>
         </StyledHero>
+
+        {/* Room Details */}
         <section className="single-room">
           <div className="single-room-images">
             {defaultImages.map((item, index) => (

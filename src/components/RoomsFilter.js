@@ -8,7 +8,7 @@ import Title from "../components/Title";
 
 // Get All Unique Values
 const getUnique = (items, value) => {
-  return [...new Set(items.map((item) => item[value].toUpperCase()))];
+  return [...new Set(items.map((item) => item[value]))];
 };
 
 // Functional Component
@@ -31,12 +31,22 @@ function RoomsFilter({ rooms }) {
   let types = getUnique(rooms, "type");
 
   // Add All
-  types = ["ALL", ...types];
+  types = ["all", ...types];
 
   // Map to JSX
   types = types.map((item, index) => {
     return (
       <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  // Get guests
+  let people = getUnique(rooms, "capacity");
+  people = people.map((item, index) => {
+    return (
+      <option key={index} value={item}>
         {item}
       </option>
     );
@@ -57,6 +67,19 @@ function RoomsFilter({ rooms }) {
             onChange={handleChange}
           >
             {types}
+          </select>
+        </div>
+        {/* Guests */}
+        <div className="form-group">
+          <label htmlFor="capacity">Max Guests</label>
+          <select
+            name="capacity"
+            id="capacity"
+            value={capacity}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {people}
           </select>
         </div>
         {/* End Of Select Type */}

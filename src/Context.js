@@ -71,7 +71,7 @@ class RoomProvider extends Component {
   // Handle Change
   handleChange = (event) => {
     const target = event.target;
-    const value = event.type === "checkbox" ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = event.target.name;
 
     this.setState(
@@ -97,12 +97,30 @@ class RoomProvider extends Component {
 
     // Transform Capacity
     capacity = parseInt(capacity);
+    price = parseInt(price);
 
     // Filter by capacity
     if (capacity !== 1) {
       tempRooms = tempRooms.filter((room) => room.capacity >= capacity);
     }
 
+    // Filter by Price
+    tempRooms = tempRooms.filter((room) => room.price <= price);
+
+    // Filter By Size
+    tempRooms = tempRooms.filter(
+      (room) => room.size >= minSize && room.size <= maxSize
+    );
+
+    // Filter Pets And Breakfast - Extras
+    if (breakfast) {
+      tempRooms = tempRooms.filter((room) => room.breakfast === true);
+    }
+    if (pets) {
+      tempRooms = tempRooms.filter((room) => room.pets === true);
+    }
+
+    // Update State
     this.setState({
       sortedRooms: tempRooms,
     });

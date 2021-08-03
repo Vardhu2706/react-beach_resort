@@ -1,11 +1,11 @@
 // Importing Helpers
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 // Importing Components
 import { RoomContext } from "../Context";
 import defaultBcg from "../images/room-1.jpeg";
-import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import StyledHero from "../components/StyledHero";
 
@@ -51,6 +51,7 @@ class SingleRoomPage extends Component {
       pets,
       images,
     } = room;
+    // eslint-disable-next-line no-unused-vars
     const [main, ...defaultImages] = images;
     console.log(defaultImages);
 
